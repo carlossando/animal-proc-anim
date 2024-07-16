@@ -17,7 +17,12 @@ class Fish {
     PVector headPos = spine.joints.get(0);
     PVector mousePos = new PVector(mouseX, mouseY);
     PVector targetPos = PVector.add(headPos, PVector.sub(mousePos, headPos).setMag(16));
-    spine.resolve(targetPos);
+    
+    PVector absDist = new PVector(abs(mousePos.x - headPos.x), abs(mousePos.y - headPos.y));
+    if(!(absDist.mag() < 20))
+    {
+      spine.resolve(targetPos);
+    }
   }
 
   void display() {

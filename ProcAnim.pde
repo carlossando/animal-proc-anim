@@ -23,14 +23,17 @@ void draw() {
   case 0:
     fish.resolve();
     fish.display();
+    fish.debugDisplay();
     break;
   case 1:
     snake.resolve();
     snake.display();
+    snake.debugDisplay();
     break;
   case 2:
     lizard.resolve();
     lizard.display();
+    lizard.debugDisplay();
     break;
   }
 }
